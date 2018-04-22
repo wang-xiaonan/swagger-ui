@@ -27,7 +27,9 @@ public class ApiController {
      */
     @RequestMapping(value = "/test")
     @ApiOperation(value = "测试", notes = "测试返回222", httpMethod = "GET")
-    @ApiImplicitParams({})
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="name",value="用户名",dataType="string", paramType = "query",example="xingguo"),
+            @ApiImplicitParam(name="id",value="用户id",dataType="long", paramType = "query")})
     public String test(){
         return "222";
     }
